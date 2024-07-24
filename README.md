@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -52,14 +52,14 @@
 </head>
 <body>
     <header>
-        <h1>Rafael B. Silva</h1>
+        <h1>sitema de apóio aos cidadãos de Juazeiro do nortea</h1>
         <p>Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
     </header>
 
     <div class="container">
         <section class="section">
             <h2>Sobre mim</h2>
-            <p>Olá! Eu sou Rafael B. Silva, atuando como Secretário Municipal de Desenvolvimento Econômico e Inovação. Estou comprometido em promover o crescimento econômico e a inovação em nossa cidade, colaborando com empresas e empreendedores para alcançar nossos objetivos comuns.</p>
+            <p>Olá! Eu sou Wilson Soares Silva, atuando como Secretário Municipal de Desenvolvimento Econômico e Inovação. Estou comprometido em promover o crescimento econômico e a inovação em nossa cidade, colaborando com empresas e empreendedores para alcançar nossos objetivos comuns.</p>
         </section>
 
         <section class="section">
@@ -86,7 +86,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Rafael B. Silva - Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
+        <p>&copy; 2024 Google Developed - Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
     </footer>
 </body>
 </html>
