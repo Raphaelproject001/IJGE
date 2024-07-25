@@ -52,7 +52,7 @@
 </head>
 <body>
     <header>
-        <h1>sitema de apóio aos cidadãos de Juazeiro do nortea</h1>
+        <h1>sistema de apóio aos cidadãos de Juazeiro do norte</h1>
         <p>Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
     </header>
 
