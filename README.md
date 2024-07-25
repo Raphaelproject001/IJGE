@@ -2,8 +2,22 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael B. Silva - Secretaria Municipal de Desenvolvimento Econômico e Inovação</title>
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Rafael B. Silva - Secretaria Municipal de Desenvolvimento Econômico e Inovação</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <span class="material-symbols-outlined">
+language
+</span>
+    language
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -52,8 +66,22 @@
 </head>
 <body>
     <header>
-        <h1>sistema de apóio aos cidadãos de Juazeiro do norte</h1>
-        <p>Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <span class="material-symbols-outlined">
+menu
+</span>
+        menu
+        <h1>Secretaria Municipal de Desenvolvimento Econômico e Inovação                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> </h1>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <style>
 .material-symbols-outlined {
@@ -68,8 +96,8 @@
         <span class="material-symbols-outlined">
 home
 </span>
-        e88a
         home
+        <p>CADMEFE - Cadastro Municipal de Endereços para Fins Estatísticos</p>
     </header>
 
     <div class="container">
