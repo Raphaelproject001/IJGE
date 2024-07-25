@@ -17,7 +17,41 @@
 language
 </span>
     language
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+</style>
+<span class="material-symbols-outlined">
+search
+</span>
+search
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -75,6 +109,10 @@ language
   'opsz' 24
 }
 </style>
+        <span class="material-symbols-outlined">
+menu
+</span>
+        menu
         <h1>Secretaria Municipal de Desenvolvimento Econômico e Inovação                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> </h1>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <style>
@@ -86,6 +124,10 @@ language
   'opsz' 24
 }
 </style>
+        <span class="material-symbols-outlined">
+home
+</span>
+        home
         <p>CADMEFE - Cadastro Municipal de Endereços para Fins Estatísticos</p>
     </header>
 
@@ -121,7 +163,6 @@ language
     <span class="material-symbols-outlined">
 sign_language
 </span>
-ebe5
 sign_language
 
 
@@ -132,13 +173,11 @@ sign_language
 <span class="material-symbols-outlined">
 thumb_up
 </span>
-e8dc
 thumb_up
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <span class="material-symbols-outlined">
 thumb_down
 </span>
-e8db
 thumb_down
 
 
