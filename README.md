@@ -2,23 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Rafael B. Silva - Secretaria Municipal de Desenvolvimento Econômico e Inovação</title><link rel="stylesheet" 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <style>
-    <style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-</style>
-<span class="material-symbols-outlined">
-search
-</span>
-search
-        body {
+    <title>Rafael B. Silva - Secretaria Municipal de Desenvolvimento Econômico e Inovação</title>  
+    body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -177,6 +162,36 @@ add_location
 360
 </span>
         360
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <span class="material-symbols-outlined">
+sign_language
+</span>
+sign_language
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<span class="material-symbols-outlined">
+thumb_up
+</span>
+thumb_up
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<span class="material-symbols-outlined">
+thumb_down
+</span>
+thumb_down
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<span class="material-symbols-outlined">
+share
+</span>
+share
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<span class="material-symbols-outlined">
+fingerprint
+</span>
+fingerprint
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<span class="material-symbols-outlined">
+info
+</span>
+info
         <p>CADMEFE - Cadastro Municipal de Endereços para Fins Estatísticos</p>
     </header>
 
@@ -208,36 +223,6 @@ add_location
             </ul>
         </section>
     </div>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <span class="material-symbols-outlined">
-sign_language
-</span>
-sign_language
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<span class="material-symbols-outlined">
-thumb_up
-</span>
-thumb_up
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<span class="material-symbols-outlined">
-thumb_down
-</span>
-thumb_down
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<span class="material-symbols-outlined">
-share
-</span>
-share
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<span class="material-symbols-outlined">
-fingerprint
-</span>
-fingerprint
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<span class="material-symbols-outlined">
-info
-</span>
-info
     <footer>
         <p>&copy; 2024 Google Developed - Secretaria Municipal de Desenvolvimento Econômico e Inovação</p>
     </footer>
