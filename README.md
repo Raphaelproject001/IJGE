@@ -1,184 +1,373 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secretaria Municipal de Desenvolvimento Econômico e Inovação - Juazeiro do Norte</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #003366;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .container {
-            padding: 2rem;
-        }
-        .section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .chat-container {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            background-color: #fafafa;
-            margin-top: 1rem;
-        }
-        .map {
-            height: 400px;
-            width: 100%;
-            margin-top: 1rem;
-        }
-        footer {
-            background-color: #003366;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .translator {
-            margin: 1rem 0;
-        }
-        .portfolio-item {
-            margin-bottom: 1rem;
-        }
-        .accessibility {
-            margin-top: 1rem;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Secretaria Municipal de Desenvolvimento Econômico e Inovação - Juazeiro do Norte</h1>
-        <nav>
-            <ul>
-                <li><a href="#announcements">Anúncios</a></li>
-                <li><a href="#chat">Chat</a></li>
-                <li><a href="#research">Pesquisa</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#history">Histórico</a></li>
-                <li><a href="#map">Mapa</a></li>
-                <li><a href="#accessibility">LIBRAS</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <section id="announcements" class="section">
-            <h2>Anúncios</h2>
-            <p>Bem-vindo à página de anúncios da Secretaria Municipal de Desenvolvimento Econômico e Inovação.</p>
-            <!-- Adicione os anúncios aqui -->
-        </section>
+pip install nltk
 
-        <section id="chat" class="section chat-container">
-            <h2>Chat</h2>
-            <p>Entre em contato conosco através do chat abaixo:</p>
-            <!-- Exemplo de chat simples (requer backend para funcionar completamente) -->
-            <div id="chatbox">
-                <textarea id="chatInput" rows="4" cols="50" placeholder="Digite sua mensagem..."></textarea><br>
-                <button onclick="sendMessage()">Enviar</button>
-                <div id="chatOutput"></div>
-            </div>
-            <script>
-                function sendMessage() {
-                    var input = document.getElementById('chatInput').value;
-                    var output = document.getElementById('chatOutput');
-                    output.innerHTML += '<p><strong>Você:</strong> ' + input + '</p>';
-                    document.getElementById('chatInput').value = '';
-                    // Aqui você deve adicionar a lógica para enviar a mensagem ao backend
-                }
-            </script>
-        </section>
+import nltk
+nltk.download('punkt')    # Tokenizadores
+nltk.download('stopwords')  # Stop words
+nltk.download('vader_lexicon')  # Sentiment analysis
 
-        <section id="research" class="section">
-            <h2>Pesquisador</h2>
-            <form>
-                <input type="text" placeholder="Digite sua pesquisa...">
-                <button type="submit">Pesquisar</button>
-            </form>
-        </section>
+# Exemplo de coleta de dados: Usando uma lista de textos
+texts = [
+    "I love programming in Python!",
+    "Natural Language Processing is amazing.",
+    "NLTK is a powerful toolkit for text analysis.",
+    "I find machine learning to be quite fascinating."
+]
 
-        <section id="portfolio" class="section">
-            <h2>Portfólio</h2>
-            <div class="portfolio-item">
-                <h3>Projeto 1</h3>
-                <p>Descrição do projeto 1.</p>
-            </div>
-            <div class="portfolio-item">
-                <h3>Projeto 2</h3>
-                <p>Descrição do projeto 2.</p>
-            </div>
-            <!-- Adicione mais itens do portfólio aqui -->
-        </section>
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+import nltk
 
-        <section id="history" class="section">
-            <h2>Histórico</h2>
-            <p>Histórico da Secretaria.</p>
-            <!-- Adicione informações históricas aqui -->
-        </section>
+# Inicializar o lematizador
+lemmatizer = WordNetLemmatizer()
 
-        <section id="map" class="section">
-            <h2>Mapa</h2>
-            <div id="map" class="map"></div>
-            <script>
-                function initMap() {
-                    var juazeiroDoNorte = { lat: -7.2141, lng: -39.3206 };
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 12,
-                        center: juazeiroDoNorte
-                    });
-                    var marker = new google.maps.Marker({
-                        position: juazeiroDoNorte,
-                        map: map
-                    });
-                }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-        </section>
+# Função de pré-processamento
+def preprocess(text):
+    # Tokenização
+    words = word_tokenize(text.lower())
+    
+    # Remoção de stop words
+    stop_words = set(stopwords.words('english'))
+    words = [word for word in words if word.isalnum() and word not in stop_words]
+    
+    # Lematização
+    words = [lemmatizer.lemmatize(word) for word in words]
+    
+    return words
 
-        <section id="accessibility" class="section">
-            <h2>LIBRAS</h2>
-            <p>Este é um exemplo básico de suporte para LIBRAS.</p>
-            <!-- Adicione aqui vídeos ou recursos em LIBRAS -->
-        </section>
+# Aplicar pré-processamento aos textos
+processed_texts = [preprocess(text) for text in texts]
+print(processed_texts)
 
-        <section class="translator section">
-            <h2>Tradutor de Idioma</h2>
-            <div id="google_translate_element"></div>
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                    new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
-                }
-            </script>
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        </section>
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Inicializar o analisador de sentimentos
+sid = SentimentIntensityAnalyzer()
+
+# Função para analisar o sentimento
+def analyze_sentiment(text):
+    scores = sid.polarity_scores(text)
+    return scores
+
+# Aplicar análise de sentimento aos textos
+sentiment_scores = [analyze_sentiment(text) for text in texts]
+print(sentiment_scores)
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Baixar recursos necessários
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('vader_lexicon')
+
+# Inicializar lematizador e analisador de sentimentos
+lemmatizer = WordNetLemmatizer()
+sid = SentimentIntensityAnalyzer()
+
+# Funções de pré-processamento e análise
+def preprocess(text):
+    words = word_tokenize(text.lower())
+    stop_words = set(stopwords.words('english'))
+    words = [word for word in words if word.isalnum() and word not in stop_words]
+    words = [lemmatizer.lemmatize(word) for word in words]
+    return words
+
+def analyze_sentiment(text):
+    scores = sid.polarity_scores(text)
+    return scores
+
+# Exemplo de textos
+texts = [
+    "I love programming in Python!",
+    "Natural Language Processing is amazing.",
+    "NLTK is a powerful toolkit for text analysis.",
+    "I find machine learning to be quite fascinating."
+]
+
+# Aplicar pré-processamento e análise
+processed_texts = [preprocess(text) for text in texts]
+sentiment_scores = [analyze_sentiment(text) for text in texts]
+
+print("Processed Texts:")
+print(processed_texts)
+
+print("\nSentiment Scores:")
+print(sentiment_scores)
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+sudo yum install postgresql-server postgresql-contrib
+
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+brew install postgresql
+
+brew services start postgresql
+
+sudo -i -u postgres
+psql
+
+CREATE DATABASE mydatabase;
+
+CREATE USER myuser WITH PASSWORD 'mypassword';
+
+GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
+
+\q
+
+psql -U myuser -d mydatabase
+
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(100),
+    hire_date DATE
+);
+
+INSERT INTO employees (name, position, hire_date)
+VALUES ('John Doe', 'Software Engineer', '2024-07-27'),
+       ('Jane Smith', 'Data Scientist', '2023-11-10');
+
+SELECT * FROM employees;
+
+UPDATE employees
+SET position = 'Senior Software Engineer'
+WHERE name = 'John Doe';
+
+DELETE FROM employees
+WHERE name = 'Jane Smith';
+
+CREATE INDEX idx_position
+ON employees (position);
+
+CREATE VIEW employee_view AS
+SELECT name, position
+FROM employees
+WHERE hire_date > '2023-01-01';
+
+SELECT * FROM employee_view;
+
+pip install psycopg2-binary
+
+import psycopg2
+
+# Conectar ao banco de dados
+conn = psycopg2.connect(
+    dbname="mydatabase",
+    user="myuser",
+    password="mypassword",
+    host="localhost"
+)
+
+# Criar um cursor
+cur = conn.cursor()
+
+# Executar uma consulta
+cur.execute("SELECT * FROM employees;")
+rows = cur.fetchall()
+
+# Imprimir os resultados
+for row in rows:
+    print(row)
+
+# Fechar o cursor e a conexão
+cur.close()
+conn.close()
+
+pg_dump mydatabase > mydatabase_backup.sql
+
+psql mydatabase < mydatabase_backup.sql
+
+pip install nltk pandas scikit-learn
+
+import nltk
+import pandas as pd
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Baixar recursos do NLTK necessários
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+# Dados de exemplo
+data = {
+    'text': [
+        "I love programming in Python! Python is amazing for data analysis.",
+        "Natural Language Processing (NLP) with NLTK is a powerful tool.",
+        "Machine Learning and Data Science are fascinating fields."
+    ]
+pip install tensorflow
+
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Embedding
+
+# Dados fictícios para exemplo
+def generate_data(seq_length, num_samples):
+    X = np.random.random((num_samples, seq_length, 1))
+    y = np.random.randint(2, size=(num_samples, 1))
+    return X, y
+
+# Gerar dados
+seq_length = 10
+num_samples = 1000
+X, y = generate_data(seq_length, num_samples)
+
+# Definir o modelo
+model = Sequential([
+    LSTM(50, activation='relu', input_shape=(seq_length, 1)),
+    Dense(1, activation='sigmoid')
+])
+
+# Compilar o modelo
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Treinar o modelo
+model.fit(X, y, epochs=10, batch_size=32)
+
+# Avaliar o modelo
+loss, accuracy = model.evaluate(X, y)
+print(f'Loss: {loss}, Accuracy: {accuracy}')
+
+pip install transformers torch
+
+from transformers import pipeline
+
+# Crie um pipeline de classificação de texto
+classifier = pipeline('sentiment-analysis')
+
+# Classifique um texto
+text = "Eu amo aprender sobre redes neurais!"
+result = classifier(text)
+
+print(result)
+
+}
+
+# Carregar dados em um DataFrame
+df = pd.DataFrame(data)
+
+# Inicializar o lematizador e definir stop words
+lemmatizer = WordNetLemmatizer()
+stop_words = set(stopwords.words('english'))
+
+# Função para pré-processar o texto
+def preprocess_text(text):
+    # Tokenização
+    words = word_tokenize(text.lower())
+    
+    # Remoção de stop words e pontuações
+    words = [word for word in words if word.isalnum() and word not in stop_words]
+    
+    # Lematização
+    words = [lemmatizer.lemmatize(word) for word in words]
+    
+    return ' '.join(words)
+
+# Aplicar pré-processamento aos textos
+df['processed_text'] = df['text'].apply(preprocess_text)
+
+# Exibir o DataFrame processado
+print("DataFrame Processado:")
+print(df)
+
+# Transformação de texto em vetores usando TF-IDF
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(df['processed_text'])
+
+# Mostrar o formato da matriz TF-IDF
+print("\nMatriz TF-IDF:")
+print(X.toarray())
+
+# Mostrar as características (palavras) usadas
+print("\nCaracterísticas (Palavras):")
+print(vectorizer.get_feature_names_out())
+
+pip install nltk scikit-learn
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+import pandas as pd
+
+# Baixar recursos necessários do NLTK
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+# Inicializar o stemmer e o lematizador
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# Dados de exemplo
+data = {
+    'text': [
+        "I love programming in Python! Python is amazing for data analysis.",
+        "Natural Language Processing (NLP) with NLTK is a powerful tool.",
+        "Machine Learning and Data Science are fascinating fields."
+    ]
+}
+
+# Carregar dados em um DataFrame
+df = pd.DataFrame(data)
+
+# Função de pré-processamento com Stemming e Lemmatization
+def preprocess_text(text, use_stemming=True):
+    # Tokenização
+    words = word_tokenize(text.lower())
+    
+    # Stemming ou Lemmatization
+    if use_stemming:
+        words = [stemmer.stem(word) for word in words if word.isalnum()]
+    else:
+        words = [lemmatizer.lemmatize(word) for word in
+
+from flask import Flask, request, jsonify
+import joblib
+
+app = Flask(__name__)
+model = joblib.load('model.pkl')  # Carregar o modelo treinado
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    prediction = model.predict([data['text']])
+    return jsonify({'prediction': prediction.tolist()})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [text, setText] = useState('');
+  const [prediction, setPrediction] = useState('');
+
+  const handleSubmit = async () => {
+    const response = await axios.post('http://localhost:5000/predict', { text });
+    setPrediction(response.data.prediction);
+  };
+
+  return (
+    <div>
+      <textarea value={text} onChange={(e) => setText(e.target.value)} />
+      <button onClick={handleSubmit}>Predict</button>
+      <div>Prediction: {prediction}</div>
     </div>
+  );
+}
 
-    <footer>
-        <p>&copy; 2024 Secretaria Municipal de Desenvolvimento Econômico e Inovação - Juazeiro do Norte</p>
-    </footer>
-</body>
-</html>
+export default App;
+
